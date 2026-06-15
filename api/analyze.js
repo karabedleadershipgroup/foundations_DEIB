@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     // Only forward the fields the companion uses — nothing else passes through.
     const payload = {
-      model: model || 'claude-sonnet-4-20250514',
+      model: model || 'claude-sonnet-4-6',
       max_tokens: Math.min(Number(max_tokens) || 1000, 2000),
       system: typeof system === 'string' ? system : '',
       messages: messages.map(m => ({
