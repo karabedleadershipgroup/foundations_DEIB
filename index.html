@@ -664,7 +664,7 @@ async function askIsa(){
     const response = await fetch("/api/analyze",{
       method:"POST", headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
-        model:"claude-sonnet-4-20250514", max_tokens:1000,
+        model:"claude-sonnet-4-6", max_tokens:1000,
         system: buildSystemPrompt(lang) + "\n\n[ACTIVE MODE]\n" + MODE_INSTRUCTIONS.askisa,
         messages:[{role:'user', content: txt}]
       })
@@ -718,7 +718,7 @@ async function sendConcept(){
     const response = await fetch("/api/analyze",{
       method:"POST", headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
-        model:"claude-sonnet-4-20250514", max_tokens:1000,
+        model:"claude-sonnet-4-6", max_tokens:1000,
         system: buildSystemPrompt(lang) + "\n\n[ACTIVE MODE]\n" + MODE_INSTRUCTIONS.concept,
         messages: msgs
       })
@@ -766,7 +766,7 @@ async function loadCard(kind){
     const response = await fetch("/api/analyze",{
       method:"POST", headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
-        model:"claude-sonnet-4-20250514", max_tokens:1000,
+        model:"claude-sonnet-4-6", max_tokens:1000,
         system: buildSystemPrompt(lang) + "\n\n[ACTIVE MODE]\nYou are generating quiz JSON only. Output strict JSON, nothing else.",
         messages:[{role:'user', content: quizGenPrompt(kind)}]
       })
